@@ -27,9 +27,10 @@
   <%= Turma.find(@disciplina.turma_id).ano_letivo %>
 </p>
 
+<h2>Atividades:</h2>
 <p>
   <% @atividades.each do |atividade| %>
-    <%= link_to atividade.titulo, atividade_path(atividade, :disciplina_id => @disciplina.id) %>
+    <%= link_to atividade.titulo, atividade_path(atividade, :disciplina_id => @disciplina.id) %> <br>
   <% end %>
 </p>
 
