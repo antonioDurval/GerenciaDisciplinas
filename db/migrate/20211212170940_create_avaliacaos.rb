@@ -3,6 +3,7 @@ class CreateAvaliacaos < ActiveRecord::Migration[6.1]
     create_table :avaliacaos do |t|
       t.float :pontos
       t.string :observacoes
+      t.references :aluno, null: false, foreign_key: true,  on_delete: :cascade
 
       t.timestamps
     end
