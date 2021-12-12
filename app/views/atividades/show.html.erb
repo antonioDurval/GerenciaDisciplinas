@@ -20,5 +20,5 @@
   <%= @atividade.data %>
 </p>
 
-<%= link_to 'Edit', edit_atividade_path(@atividade) %> |
-<%= link_to 'Back', atividades_path %>
+<%= link_to 'Editar', edit_atividade_path(@atividade, :disciplina_id => @disciplina.id) %> |
+<%= link_to 'Voltar', disciplina_path(@disciplina) %>

@@ -8,6 +8,8 @@ class DisciplinasController < ApplicationController
 
   # GET /disciplinas/1 or /disciplinas/1.json
   def show
+    @disciplina = Disciplina.find(params[:id])
+    @atividades = @disciplina.atividades
   end
 
   # GET /disciplinas/new

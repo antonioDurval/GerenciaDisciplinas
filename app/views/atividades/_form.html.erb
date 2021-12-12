@@ -28,8 +28,10 @@
 
   <div class="field">
     <%= form.label :data %>
-    <%= form.date_select :data %>
+    <%= form.date_field :data %>
   </div>
+
+  <%= hidden_field_tag(:disciplina_id, @disciplina.id) %>
 
   <div class="actions">
     <%= form.submit %>

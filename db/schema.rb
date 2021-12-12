@@ -17,8 +17,10 @@ ActiveRecord::Schema.define(version: 2021_12_12_142400) do
     t.string "descricao"
     t.integer "bimestre"
     t.date "data"
+    t.integer "disciplina_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["disciplina_id"], name: "index_atividades_on_disciplina_id"
   end
 
   create_table "disciplinas", force: :cascade do |t|
@@ -51,5 +53,6 @@ ActiveRecord::Schema.define(version: 2021_12_12_142400) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "atividades", "disciplinas"
   add_foreign_key "disciplinas", "turmas"
 end

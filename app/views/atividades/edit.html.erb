@@ -1,6 +1,3 @@
-<h1>Editing Atividade</h1>
+<%= render 'form', {atividade: @atividade, disciplina: @disciplina} %>
 
-<%= render 'form', atividade: @atividade %>
-
-<%= link_to 'Show', @atividade %> |
-<%= link_to 'Back', atividades_path %>
+<%= link_to 'voltar', atividade_path(@atividade, :disciplina_id => @disciplina.id) %>

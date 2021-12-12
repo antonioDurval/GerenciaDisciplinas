@@ -27,5 +27,11 @@
   <%= Turma.find(@disciplina.turma_id).ano_letivo %>
 </p>
 
-<%= link_to 'Edit', edit_disciplina_path(@disciplina) %> |
-<%= link_to 'Back', disciplinas_path %>
+<p>
+  <% @atividades.each do |atividade| %>
+    <%= link_to atividade.titulo, atividade_path(atividade, :disciplina_id => @disciplina.id) %>
+  <% end %>
+</p>
+
+<%= link_to 'Adicionar atividade na disciplina', new_atividade_path(:disciplina_id => @disciplina.id) %> |
+<%= link_to 'Voltar', disciplinas_path %>
