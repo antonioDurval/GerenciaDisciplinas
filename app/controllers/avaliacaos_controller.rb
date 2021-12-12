@@ -21,7 +21,9 @@ class AvaliacaosController < ApplicationController
 
   # POST /avaliacaos or /avaliacaos.json
   def create
+    @aluno = Aluno.find(avaliacao_params[:aluno_id])
     @avaliacao = Avaliacao.new(avaliacao_params)
+    @aluno.avaliacaos << @avaliacao
 
     respond_to do |format|
       if @avaliacao.save
@@ -64,6 +66,6 @@ class AvaliacaosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def avaliacao_params
-      params.require(:avaliacao).permit(:pontos, :observacoes)
+      params.require(:avaliacao).permit(:pontos, :observacoes, :aluno_id)
     end
 end

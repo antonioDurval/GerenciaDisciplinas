@@ -21,6 +21,11 @@
     <%= form.text_field :observacoes %>
   </div>
 
+  <div class="field">
+    <label name="aluno_id">Nome do Aluno:</label>
+    <%= form.collection_select(:aluno_id, Aluno.all, :id, :nome,{:selected => @avaliacao.aluno_id}, :required => true)%>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
