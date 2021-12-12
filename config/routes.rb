@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :atividades
   resources :disciplinas
   devise_for :users
   resources :turmas
