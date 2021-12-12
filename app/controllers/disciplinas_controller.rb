@@ -21,7 +21,9 @@ class DisciplinasController < ApplicationController
 
   # POST /disciplinas or /disciplinas.json
   def create
+    @turma = Turma.find(disciplina_params[:turma_id])
     @disciplina = Disciplina.new(disciplina_params)
+    @turma.disciplinas << @disciplina
 
     respond_to do |format|
       if @disciplina.save
@@ -64,6 +66,6 @@ class DisciplinasController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def disciplina_params
-      params.require(:disciplina).permit(:nome, :ano_letivo)
+      params.require(:disciplina).permit(:nome, :ano_letivo, :turma_id)
     end
 end

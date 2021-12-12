@@ -21,6 +21,23 @@
     <%= form.number_field :ano_letivo %>
   </div>
 
+  <h2>Turma:</h2>
+
+  <div class="field">
+    <label name="turma_id">Letra:</label>
+    <%= form.collection_select(:turma_id, Turma.all, :id, :letra,{:selected => @disciplina.turma_id}, :required => true)%>
+  </div>
+
+  <div class="field">
+    <label name="turma_id">Ano</label>
+    <%= form.collection_select(:turma_id, Turma.all, :id, :ano,{:selected => @disciplina.turma_id}, :required => true)%>
+  </div>
+
+  <div class="field">
+    <label name="turma_id">Ano Letivo</label>
+    <%= form.collection_select(:turma_id, Turma.all, :id, :ano_letivo,{:selected => @disciplina.turma_id}, :required => true)%>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
