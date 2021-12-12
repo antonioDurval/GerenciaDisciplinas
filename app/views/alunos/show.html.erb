@@ -5,5 +5,5 @@
   <%= @aluno.nome %>
 </p>
 
-<%= link_to 'Edit', edit_aluno_path(@aluno) %> |
-<%= link_to 'Back', alunos_path %>
+<%= link_to 'Editar', edit_aluno_path(@aluno, :turma_id => @turma.id) %> |
+<%= link_to 'Voltar', turma_path(@turma) %>

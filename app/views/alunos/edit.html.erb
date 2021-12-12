@@ -1,6 +1,2 @@
-<h1>Editing Aluno</h1>
-
-<%= render 'form', aluno: @aluno %>
-
-<%= link_to 'Show', @aluno %> |
-<%= link_to 'Back', alunos_path %>
+<%= render 'form', {aluno: @aluno, turma: @turma} %>
+<%= link_to 'voltar', aluno_path(@aluno, :turma_id => @turma.id) %>

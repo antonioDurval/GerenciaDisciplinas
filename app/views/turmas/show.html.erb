@@ -15,5 +15,12 @@
   <%= @turma.ano_letivo %>
 </p>
 
-<%= link_to 'Edit', edit_turma_path(@turma) %> |
-<%= link_to 'Back', turmas_path %>
+<h2>Alunos:</h2>
+<p>
+  <% @alunos.each do |aluno| %>
+    <%= link_to aluno.nome, aluno_path(aluno, :turma_id => @turma.id) %> <br>
+  <% end %>
+</p>
+
+<%= link_to 'Adicionar aluno na turma', new_aluno_path(:turma_id => @turma.id) %> |
+<%= link_to 'Voltar', turmas_path %>

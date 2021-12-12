@@ -9,6 +9,8 @@ class TurmasController < ApplicationController
 
   # GET /turmas/1 or /turmas/1.json
   def show
+    @turma = Turma.find(params[:id])
+    @alunos = @turma.alunos
   end
 
   # GET /turmas/new

@@ -16,6 +16,8 @@
     <%= form.text_field :nome %>
   </div>
 
+  <%= hidden_field_tag(:turma_id, @turma.id) %>
+
   <div class="actions">
     <%= form.submit %>
   </div>
