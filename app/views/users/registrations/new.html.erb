@@ -1,7 +1,12 @@
-<h2>Sign up</h2>
+<h2>Cadastrando-se no sistema</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "users/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.label :nome %>
+    <%= f.text_field :nome%>
+  </div>
 
   <div class="field">
     <%= f.label :email %><br />

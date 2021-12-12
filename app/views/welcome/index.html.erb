@@ -2,7 +2,7 @@
 
 <% if user_signed_in? %>
   <ul>
-    <li><%= current_user.email %></li>
+    <li><%= current_user.nome %></li>
     <li><%= link_to "Sair", destroy_user_session_path, method: :delete %></li>
   </ul>
 <% else %>
