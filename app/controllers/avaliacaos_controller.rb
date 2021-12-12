@@ -1,5 +1,5 @@
 class AvaliacaosController < ApplicationController
-  before_action :set_avaliacao, only: %i[ show edit update destroy ]
+  #before_action :set_avaliacao, only: %i[ show edit update destroy ]
 
   # GET /avaliacaos or /avaliacaos.json
   def index
@@ -8,6 +8,7 @@ class AvaliacaosController < ApplicationController
 
   # GET /avaliacaos/1 or /avaliacaos/1.json
   def show
+    @avaliacao = Avaliacao.find(params[:id])
   end
 
   # GET /avaliacaos/new
@@ -17,13 +18,16 @@ class AvaliacaosController < ApplicationController
 
   # GET /avaliacaos/1/edit
   def edit
+    @avaliacao = Avaliacao.find(params[:id])
   end
 
   # POST /avaliacaos or /avaliacaos.json
   def create
     @aluno = Aluno.find(avaliacao_params[:aluno_id])
+    @atividade = Atividade.find(avaliacao_params[:atividade_id])
     @avaliacao = Avaliacao.new(avaliacao_params)
     @aluno.avaliacaos << @avaliacao
+    @atividade.avaliacaos << @avaliacao
 
     respond_to do |format|
       if @avaliacao.save
@@ -38,6 +42,8 @@ class AvaliacaosController < ApplicationController
 
   # PATCH/PUT /avaliacaos/1 or /avaliacaos/1.json
   def update
+    @avaliacao = Avaliacao.find(params[:id])
+
     respond_to do |format|
       if @avaliacao.update(avaliacao_params)
         format.html { redirect_to @avaliacao, notice: "Avaliacao was successfully updated." }
@@ -51,6 +57,8 @@ class AvaliacaosController < ApplicationController
 
   # DELETE /avaliacaos/1 or /avaliacaos/1.json
   def destroy
+    @avaliacao = Avaliacao.find(params[:id])
+
     @avaliacao.destroy
     respond_to do |format|
       format.html { redirect_to avaliacaos_url, notice: "Avaliacao was successfully destroyed." }
@@ -59,13 +67,8 @@ class AvaliacaosController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_avaliacao
-      @avaliacao = Avaliacao.find(params[:id])
-    end
-
     # Only allow a list of trusted parameters through.
     def avaliacao_params
-      params.require(:avaliacao).permit(:pontos, :observacoes, :aluno_id)
+      params.require(:avaliacao).permit(:pontos, :observacoes, :aluno_id, :atividade_id)
     end
 end
