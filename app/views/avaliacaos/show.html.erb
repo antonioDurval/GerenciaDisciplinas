@@ -10,9 +10,23 @@
   <%= @avaliacao.observacoes %>
 </p>
 
+<h2>Aluno:</h2>
+
 <p>
   <strong>Nome do aluno:</strong>
   <%= Aluno.find(@avaliacao.aluno_id).nome %>
+</p>
+
+<h2>Atividade:</h2>
+
+<p>
+  <strong>Título:</strong>
+  <%= Atividade.find(@avaliacao.atividade_id).titulo %>
+</p>
+
+<p>
+  <strong>Bimestre:</strong>
+  <%= Atividade.find(@avaliacao.atividade_id).bimestre %>
 </p>
 
 <%= link_to 'Edit', edit_avaliacao_path(@avaliacao) %> |

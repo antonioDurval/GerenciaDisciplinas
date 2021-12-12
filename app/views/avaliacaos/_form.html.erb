@@ -31,6 +31,11 @@
     <%= form.collection_select(:atividade_id, Atividade.all, :id, :titulo,{:selected => @avaliacao.atividade_id}, :required => true)%>
   </div>
 
+  <div class="field">
+    <label name="atividade_id">Bimestre:</label>
+    <%= form.collection_select(:atividade_id, Atividade.all, :id, :bimestre,{:selected => @avaliacao.atividade_id}, :required => true)%>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
