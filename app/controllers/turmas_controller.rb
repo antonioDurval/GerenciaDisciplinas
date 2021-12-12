@@ -1,5 +1,6 @@
 class TurmasController < ApplicationController
   before_action :set_turma, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
 
   # GET /turmas or /turmas.json
   def index
