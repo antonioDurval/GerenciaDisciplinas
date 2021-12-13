@@ -4,3 +4,6 @@
 
 ### [Codacy](https://app.codacy.com/gh/antonioDurval/GerenciaDisciplinas/dashboard)
 * Página do sistema na plataforma.
+
+### [Heroku](https://gerenciadisciplinas-es.herokuapp.com/)
+* Página do sistema na plataforma.
