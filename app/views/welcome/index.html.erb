@@ -5,15 +5,15 @@
     <li><%= current_user.nome %></li>
     <li><%= link_to "Sair", destroy_user_session_path, method: :delete %></li>
   </ul>
+
+  <ul>
+    <li><%= link_to "Turmas", turmas_path %></li>
+    <li><%= link_to "Disciplinas", disciplinas_path %></li>
+    <li><%= link_to "Avaliações", avaliacaos_path %></li>
+  </ul>
 <% else %>
   <ul>
     <li><%= link_to "Entrar", new_user_session_path %></li>
     <li><%= link_to "Cadastro de novo usuário", new_user_registration_path %></li>
   </ul>
 <% end %>
-
-<ul>
-  <li><%= link_to "Turmas", turmas_path %></li>
-  <li><%= link_to "Disciplinas", disciplinas_path %></li>
-  <li><%= link_to "Avaliações", avaliacaos_path %></li>
-</ul>
