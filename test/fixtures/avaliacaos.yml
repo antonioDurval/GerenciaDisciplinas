@@ -3,7 +3,11 @@
 one:
   pontos: 1.5
   observacoes: MyString
+  aluno_id: 1
+  atividade_id: 1
 
 two:
   pontos: 1.5
   observacoes: MyString
+  aluno_id: 2
+  atividade_id: 2

@@ -1,5 +1,5 @@
 class DisciplinasController < ApplicationController
-  before_action :set_disciplina, only: %i[ show edit update destroy ]
+  #before_action :set_disciplina, only: %i[ show edit update destroy ]
 
   # GET /disciplinas or /disciplinas.json
   def index

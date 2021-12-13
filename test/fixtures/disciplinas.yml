@@ -3,7 +3,9 @@
 one:
   nome: MyString
   ano_letivo: 1
+  turma_id: 1
 
 two:
   nome: MyString
   ano_letivo: 1
+  turma_id: 2

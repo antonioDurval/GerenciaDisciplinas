@@ -5,9 +5,10 @@ one:
   descricao: MyString
   bimestre: 1
   data: 2021-12-12
-
+  disciplina_id: 1
 two:
   titulo: MyString
   descricao: MyString
   bimestre: 1
   data: 2021-12-12
+  disciplina_id: 2
